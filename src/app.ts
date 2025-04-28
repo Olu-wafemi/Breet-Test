@@ -48,7 +48,7 @@ app.use(errorHandler);
 
 let server: Server;
 if (!isTestEnvironment) {
-  server = app.listen(PORT, () => {
+  server = app.listen(PORT || 3000, () => {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
   });
 
