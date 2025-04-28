@@ -1,5 +1,4 @@
-
-module.exports =  {
+module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['<rootDir>/tests/**/*.{test,spec}.ts'],
@@ -8,9 +7,6 @@ module.exports =  {
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   globals: {
     'process.env.NODE_ENV': 'test',
-    'ts-jest': {
-      tsconfig: 'tsconfig.test.json'
-    }
   },
   collectCoverage: false,
   coverageDirectory: 'coverage',
@@ -19,13 +15,9 @@ module.exports =  {
   },
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      tsconfig: 'tsconfig.test.json'
-    }],
-  },
-  globals: {
-    'ts-jest': {
-      isolatedModules: true,
-    },
+      tsconfig: 'tsconfig.test.json',
+      isolatedModules: true
+    }]
   },
   maxWorkers: 1,
   testTimeout: 30000

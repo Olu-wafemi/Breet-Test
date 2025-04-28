@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-    "start": "NODE_ENV=production node dist/server.js",
+    "start": "NODE_ENV=production node dist/app.js",
     "dev": "nodemon src/app.ts",
     "build": "tsc",
     "test": "jest",

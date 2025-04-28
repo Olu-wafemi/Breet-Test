@@ -8,16 +8,14 @@ import { NotFoundError } from './utils/errors';
 import indexRouter from './routes/indexroute';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './config/swagger';
+import { Server } from 'http';
 
 dotenv.config();
 
 const isTestEnvironment = process.env.NODE_ENV === 'test';
 const isProduction = process.env.NODE_ENV === 'production';
 const app: Express = express();
-
-
-connectDB();
-connectRedis();
+const PORT = process.env.PORT || 3000;
 
 process.on('uncaughtException', (error) => {
   console.error('UNCAUGHT EXCEPTION! Shutting down...', error);
@@ -28,6 +26,9 @@ process.on('unhandledRejection', (error) => {
   console.error('UNHANDLED REJECTION! Shutting down...', error);
   if (!isTestEnvironment) process.exit(1);
 });
+
+connectDB();
+connectRedis();
 
 app.use(cors());
 app.use(express.json({ limit: '10kb' }));
@@ -43,12 +44,27 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/api', indexRouter);
-
-
-app.all('*', (req: Request, res: Response, next: NextFunction) => {
-  next(new NotFoundError(`Cannot find ${req.originalUrl} on this server`));
-});
-
 app.use(errorHandler);
+
+let server: Server;
+if (!isTestEnvironment) {
+  server = app.listen(PORT, () => {
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+  });
+
+  server.on('error', (error) => {
+    console.error('Server error:', error);
+    process.exit(1);
+  });
+
+  process.on('SIGINT', () => {
+    if (server) {
+      server.close(() => {
+        console.log('Server closed');
+        process.exit(0);
+      });
+    }
+  });
+}
 
 export default app;
