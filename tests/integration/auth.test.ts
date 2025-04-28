@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../app';
-import User from '../../models/user';
+import app from '../../src/app';
+import User from '../../src/models/user';
 
 describe('Auth Endpoints', () => {
  

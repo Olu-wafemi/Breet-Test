@@ -1,5 +1,5 @@
-import { createProduct, getProductById, getAllProducts } from '../../services/productservice';
-import Product from '../../models/product';
+import { createProduct, getProductById, getAllProducts } from '../../src/services/productservice';
+import Product from '../../src/models/product';
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 

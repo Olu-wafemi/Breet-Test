@@ -1,10 +1,10 @@
-import { getCart, addToCart, updateCartItem, removeFromCart, clearCart } from '../../services/cartservice';
-import Cart from '../../models/cart';
-import Product from '../../models/product';
+import { getCart, addToCart, updateCartItem, removeFromCart, clearCart } from '../../src/services/cartservice';
+import Cart from '../../src/models/cart';
+import Product from '../../src/models/product';
 import mongoose from 'mongoose';
-import { NotFoundError, InsufficientStockError } from '../../utils/errors';
+import { NotFoundError, InsufficientStockError } from '../../src/utils/errors';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import user from '../../models/user';
+import user from '../../src/models/user';
 
 
 jest.mock('../../src/models/cart', () => {

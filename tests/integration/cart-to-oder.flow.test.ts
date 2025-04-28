@@ -1,7 +1,7 @@
 import request from 'supertest';
-import app from '../../app';
+import app from '../../src/app';
 import mongoose from 'mongoose';
-import Product from '../../models/product'; // Direct import of the Product model
+import Product from '../../src/models/product'; // Direct import of the Product model
 
 jest.setTimeout(30000);
 
