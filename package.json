@@ -1,11 +1,11 @@
 {
   "name": "shopping-cart-api",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.ts",
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon src/app.ts",
-    "build": "tsc && tsc-alias",
+    
     "test": "jest",
     "test:watch": "jest --watch",
     "seed": "ts-node src/utils/seeder.ts"
