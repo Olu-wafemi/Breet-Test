@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon src/app.ts",
-    
+    "prebuild": "npm install --save-dev @types/cors @types/swagger-jsdoc @types/jsonwebtoken @types/bcrypt",
+    "build": "tsc && tsc-alias",
     "test": "jest",
     "test:watch": "jest --watch",
     "seed": "ts-node src/utils/seeder.ts"
