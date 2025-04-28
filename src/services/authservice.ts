@@ -1,4 +1,4 @@
-import jwt, { Secret, SignOptions } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import User, { IUser } from '../models/user';
 import { RegisterUserInput, LoginUserInput } from '../schemas/userschema';
 import { 
@@ -10,16 +10,14 @@ import {
 
 
 const generateToken = (userId: string, role: string): string => {
+   
     
-    const secret: Secret = process.env.JWT_SECRET as Secret;
-    
-  
-    
-    const options: SignOptions = {
-      expiresIn: (process.env.JWT_EXPIRES_IN as SignOptions['expiresIn']) || '1d',
-    };
-  
-    return jwt.sign({ id: userId, role }, secret, options);
+    const jwtSign = (jwt.sign as any);
+    return jwtSign(
+      { id: userId, role }, 
+      process.env.JWT_SECRET, 
+      { expiresIn: process.env.JWT_EXPIRES_IN || '1d' }
+    );
   };
 
 export const registerUser = async (userData: RegisterUserInput): Promise<{ user: IUser; token: string }> => {
