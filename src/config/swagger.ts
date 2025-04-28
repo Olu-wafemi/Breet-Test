@@ -5,9 +5,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const LOCAL_API_URL = 'http://localhost:9000';
-const DEV_API_URL = process.env.DEV_API_URL || LOCAL_API_URL;
-
 const swaggerDefinition = {
   openapi: '3.0.0',
   info: {
