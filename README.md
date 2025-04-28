@@ -1,5 +1,10 @@
 # Shopping Cart API
 
+## API Documentation
+
+**Live API Documentation: [https://breet-backend-test.onrender.com/docs/](https://breet-backend-test.onrender.com/docs/)**
+
+The API is fully documented using Swagger. Access the interactive API documentation at the link above to explore all endpoints, request/response formats, and test the API directly.
 
 ## Technical Challenges Addressed
 
@@ -72,6 +77,8 @@
 6. Access the API documentation at:
    ```
    https://breet-backend-test.onrender.com/docs
+
+   http://localhost:3000/docs
    ```
 
 ### Running Tests
