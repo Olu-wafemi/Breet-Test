@@ -1,10 +1,10 @@
-import { createOrder, getOrderById, getUserOrders, updateOrderStatus } from '../../src/services/orderservice';
-import Order from '../../src/models/order';
-import Cart from '../../src/models/cart';
-import Product from '../../src/models/product';
+import { createOrder, getOrderById, getUserOrders, updateOrderStatus } from '../../services/orderservice';
+import Order from '../../models/order';
+import Cart from '../../models/cart';
+import Product from '../../models/product';
 import mongoose from 'mongoose';
-import { NotFoundError, InsufficientStockError, BadRequestError } from '../../src/utils/errors';
-import { redisClient } from '../../src/config/redis';
+import { NotFoundError, InsufficientStockError, BadRequestError } from '../../utils/errors';
+import { redisClient } from '../../config/redis';
 
 
 jest.mock('../../src/models/order', () => {
