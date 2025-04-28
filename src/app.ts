@@ -13,6 +13,7 @@ import { Server } from 'http';
 dotenv.config();
 
 const isTestEnvironment = process.env.NODE_ENV === 'test';
+const isProduction = process.env.NODE_ENV === 'production';
 const app: Express = express();
 const PORT = process.env.PORT || 3000;
 
