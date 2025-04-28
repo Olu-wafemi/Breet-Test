@@ -8,7 +8,10 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ['./tests/jest.setup.ts'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   globals: {
-    'process.env.NODE_ENV': 'test'
+    'process.env.NODE_ENV': 'test',
+    'ts-jest': {
+      tsconfig: 'tsconfig.test.json'
+    }
   },
   collectCoverage: false,
   coverageDirectory: 'coverage',
@@ -16,7 +19,9 @@ const config: Config.InitialOptions = {
     global: { branches: 70, functions: 70, lines: 70, statements: 70 }
   },
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', {}],
+    '^.+\\.tsx?$': ['ts-jest', {
+      tsconfig: 'tsconfig.test.json'
+    }],
   },
   maxWorkers: 1,
   testTimeout: 30000
