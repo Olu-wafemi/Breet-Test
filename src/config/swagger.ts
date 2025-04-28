@@ -15,10 +15,7 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'API documentation for the Shopping Cart system'
   },
-  servers: [
-    //{ url: LOCAL_API_URL, description: 'Local server' },
-    { url: DEV_API_URL, description: 'Development server' }
-  ],
+  
   components: {
     securitySchemes: {
       bearerAuth: {
