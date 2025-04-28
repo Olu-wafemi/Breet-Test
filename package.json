@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon src/app.ts",
-    "build": "tsc --project tsconfig.json",
+    "build": "tsc && tsc-alias",
     "test": "jest",
      "test:watch": "jest --watch",
     "seed": "ts-node src/utils/seeder.ts"
