@@ -17,11 +17,9 @@ interface OrderItem {
  * 
  * ASSUMPTIONS & DESIGN DECISIONS:
  * 1. Orders are created from cart data
- * 2. Order items maintain the price at time of purchase (price snapshots)
- * 3. Orders follow a specific lifecycle through status changes
- * 4. Total amount is calculated and stored at order creation
- * 5. Timestamps track order creation and updates
- * 6. Orders are permanent records and cannot be deleted
+ * 2. Total amount is calculated and stored at order creation
+ * 3. Timestamps track order creation and updates
+ * 4. Orders are permanent records and cannot be deleted
  * 
  * @interface IOrder
  * @extends Document

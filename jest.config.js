@@ -1,6 +1,5 @@
-import type { Config } from '@jest/types';
 
-const config: Config.InitialOptions = {
+module.exports =  {
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['<rootDir>/tests/**/*.{test,spec}.ts'],
@@ -23,8 +22,14 @@ const config: Config.InitialOptions = {
       tsconfig: 'tsconfig.test.json'
     }],
   },
+  globals: {
+    'ts-jest': {
+      isolatedModules: true,
+    },
+  },
   maxWorkers: 1,
   testTimeout: 30000
 };
 
-export default config; 
+
+
