@@ -42,7 +42,7 @@ The API is fully documented using Swagger. Access the interactive API documentat
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Olu-wafemi/Breet-Backend-Test.git
+   git clone https://github.com/Olu-wafemi/Breet-Test.git
    cd shopping-cart-api
    ```
 
@@ -58,7 +58,7 @@ The API is fully documented using Swagger. Access the interactive API documentat
 
 4. Configure environment variables in `.env`:
    ```
-   PORT=3000
+   PORT=9000
    NODE_ENV=development
    MONGODB_URI=mongodb+srv://<username>:<password>@<host>/<database>
    REDIS_HOST=<redis-host>
@@ -78,7 +78,7 @@ The API is fully documented using Swagger. Access the interactive API documentat
    ```
    https://breet-backend-test.onrender.com/docs
 
-   http://localhost:3000/docs
+   http://localhost:9000/docs
    ```
 
 ### Running Tests
